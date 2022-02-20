@@ -33,7 +33,7 @@ public class ColorPanel extends javax.swing.JPanel {
     }
 
     /**
-     * 三つのスライダーから値を得て、色を設定する。
+     * Get color values from three sliders and set color
      */
     private void setColor() {
         int r = redSlider.getValue();
@@ -65,7 +65,7 @@ public class ColorPanel extends javax.swing.JPanel {
     }
 
     /**
-     * リスナーを登録
+     * Add change listener
      *
      * @param listener
      */
@@ -74,13 +74,12 @@ public class ColorPanel extends javax.swing.JPanel {
     }
 
     /**
-     * リスナーへイベントを通知
+     * Notify listeners of event
      *
      * @param e
      */
     protected void fireStateChanged(ChangeEvent e) {
         setColor();
-        //listenerに知らせる
         listeners.forEach(li -> li.stateChanged(e));
     }
 

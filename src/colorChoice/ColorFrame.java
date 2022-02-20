@@ -17,7 +17,9 @@ public class ColorFrame extends javax.swing.JFrame {
         showColor.setBackground(colorPanel.getColor());
         colorPanel.addChangeListener((ChangeEvent e) -> {
             Color c = colorPanel.getColor();
-            System.out.println(c.toString());
+            colorPanel.setBackground(c);
+            showColor.setBackground(c);
+//            System.out.println(c.toString());
         });
     }
 
