@@ -17,9 +17,8 @@ public class ColorFrame extends javax.swing.JFrame {
         showColor.setBackground(colorPanel.getColor());
         colorPanel.addChangeListener((ChangeEvent e) -> {
             Color c = colorPanel.getColor();
-            //set background color of colorPanel
-            //set background color of showColor
-            System.out.println(c.toString());
+            colorPanel.setBackground(c);
+            showColor.setBackground(c);
         });
     }
 
@@ -114,10 +113,8 @@ public class ColorFrame extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new ColorFrame().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new ColorFrame().setVisible(true);
         });
     }
 
